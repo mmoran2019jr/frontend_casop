@@ -19,4 +19,4 @@ Este es el formulario de editar el registro el cual cuenta con las mismas valida
 
 El campo para ingresar el codigo de jefe es dinamico y se podra filtrar segun los datos que tenemos en la lista del select.
 
-Y por ultimo la funcion de eliminar un puesto.
+Y por ultimo la funcion de eliminar un puesto al darle click al boton eliminar en la lista de la pantalla principal.
