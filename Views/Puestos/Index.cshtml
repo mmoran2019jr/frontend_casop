@@ -1,0 +1,23 @@
+﻿@model List<promerica_frontend.Models.PuestoViewModel>
+
+@{
+    ViewData["Title"] = "Jerarquía de Puestos";
+}
+
+<h1 class="mb-4">@ViewData["Title"]</h1>
+
+<a href="/Puestos/Create" class="btn btn-success mb-4">➕ Agregar Puesto</a>
+
+@if (Model != null && Model.Any())
+{
+    <ul class="list-group list-group-flush">
+        @foreach (var puesto in Model)
+        {
+            @Html.Partial("_PuestoPartial", puesto)
+        }
+    </ul>
+}
+else
+{
+    <div class="alert alert-warning">No hay puestos registrados.</div>
+}

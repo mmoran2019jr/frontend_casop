@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\promerica_frontend.props" />
+</Project>

@@ -1,0 +1,52 @@
+﻿@model promerica_frontend.Models.PuestoViewModel
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Crear Puesto";
+}
+
+<div class="card shadow-sm">
+    <div class="card-header bg-success text-white">
+        <h4 class="mb-0">@ViewData["Title"]</h4>
+    </div>
+    <div class="card-body p-4">
+        <form asp-action="Create" method="post" novalidate>
+            <div class="mb-3">
+                <label asp-for="Codigo" class="form-label"></label>
+                <input asp-for="Codigo" class="form-control" />
+                <span asp-validation-for="Codigo" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Puesto" class="form-label"></label>
+                <input asp-for="Puesto" class="form-control" />
+                <span asp-validation-for="Puesto" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Nombre" class="form-label"></label>
+                <input asp-for="Nombre" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="CodigoJefe" class="form-label"></label>
+                @Html.DropDownListFor(model => model.CodigoJefe,
+                         new SelectList(ViewBag.PuestosDisponibles as List<SelectListItem>, "Value", "Text", Model.CodigoJefe),
+                         "-- Seleccione un jefe --",
+                         new { @class = "form-select select2" })
+                <span asp-validation-for="CodigoJefe" class="text-danger"></span>
+            </div>
+
+
+            <div class="btn-group">
+                <button type="submit" class="btn btn-success">Guardar</button>
+                <a href="/Puestos" class="btn btn-outline-secondary">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
