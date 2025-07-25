@@ -13,7 +13,7 @@ namespace promerica_frontend.Controllers
         public PuestosController(IHttpClientFactory factory)
         {
             _http = factory.CreateClient();
-            _http.BaseAddress = new Uri("http://localhost:5153/api/"); // tu backend
+            _http.BaseAddress = new Uri("http://localhost:5153/api/"); //backend
         }
 
         // GET: /Puestos
